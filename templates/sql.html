@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}SQL{% endblock %}
+
+{% block content %}
+<h1>User List</h1>
+<ul>
+    {% for person in persons %}
+        <li>{{ person.FirstName }} {{ person.MiddelInitial }} {{ person.LastName }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

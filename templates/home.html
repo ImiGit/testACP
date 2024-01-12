@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1>File Upload and Azure Blob Storage</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="container_name">Select Container:</label>
+        <select name="container_name" id="container_name">
+            {% for container in containers %}
+                <option value="{{ container }}">{{ container }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="file">Choose a file:</label>
+        <input type="file" name="file" accept=".png, .jpg, .jpeg, .gif, .bmp">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if blob_info %}
+        <h2>Uploaded Files:</h2>
+        <ul>
+            {% for name, created, size, container in blob_info %}
+                <li>{{ name }} - Created: {{ created }} - Size: {{ size }} bytes - Container: {{ container }} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

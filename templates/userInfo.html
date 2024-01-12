@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}User Info{% endblock %}
+
+{% block content %}
+
+    <h1>Welcome, Iman</h1>
+    <p>Access Token: {{ access_token }}</p>
+    <p>ID Token: {{ id_token }}</p>
+    <p>Response 1: {{ response1 }}</p>
+    <p>Response 2: {{ response2 }}</p>
+
+    {% if username %}
+        <h1>Welcome, {{ username }}!</h1>
+        <p>Email: {{ email }}</p>
+        <img src="{{ profile_picture_url }}" alt="Profile Picture">
+    {% endif %}
+
+    {% if profile_picture_url %}
+        <h1>Welcome, Iman</h1>
+        <p>Email: NA</p>
+        <img src="{{ profile_picture_url }}" alt="Profile Picture">
+        <p>{{ profile_picture_url }}</p>
+    {% endif %}
+
+{% endblock %}

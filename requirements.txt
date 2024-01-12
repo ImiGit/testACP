@@ -1,0 +1,9 @@
+flask
+python-dotenv
+requests
+pyodbc
+flask_sqlalchemy
+azure-storage-blob
+msal
+azure-identity
+pyjwt
